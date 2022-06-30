@@ -8,12 +8,10 @@ const io = new Server(server);
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
-
-
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log(new Date(),'a user connected');
     socket.on('disconnect', () => {
-      console.log('user disconnected');
+      console.log(new Date(),'user disconnected');
     });
   });
 
